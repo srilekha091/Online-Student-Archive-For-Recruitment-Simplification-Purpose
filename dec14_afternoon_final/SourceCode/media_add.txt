@@ -1,0 +1,28 @@
+<?php
+session_start();
+if(!(isset($_SESSION['name']))) 
+{
+die("You are not logged in.Click <a href='recruiters_login.php'>here to login</a>");
+}	
+?>
+
+<html>
+<body>
+<body bgcolor="CCCC99"> 
+<form action="media_add_nav.php" method="post" enctype="multipart/form-data">
+<h2><a href ="userprofile.php">Home</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href ="student_contacts_page.php">Student Contacts Page</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href ="company_profiles_page.php">Company Home Page</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href ="logout.php">Logout</a></h2>
+<center><h1><?php echo 'Welcome '.$_SESSION['name'];?></h1></center>
+<br />
+<h3><u>Adding media:</u></h3>
+<br />
+<label for="file"><b>Filename:</b></label>
+<input type="file" name="file" id="file" /> 
+<br /><br /><br />
+<input type="submit" name="submit" value="Submit" />
+</form>
+</body>
+</html>
+
